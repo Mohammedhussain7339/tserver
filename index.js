@@ -10,7 +10,8 @@ const quoteRoutes = require('./routers/quotes_r')
 const updatequoteRoutes = require('./routers/updatequote_r')
 const authRoutes = require('./routers/signup_r');
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT||8000;
+const BASE_URL =process.env.BASE_URL;
 
 
 const corsOptions = {
