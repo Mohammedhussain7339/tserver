@@ -15,7 +15,7 @@ const BASE_URL =process.env.BASE_URL;
 
 
 const corsOptions = {
-  origin: 'http://localhost:5173', // Updated to remove trailing slash
+origin: {BASE_URL}, // Updated to remove trailing slash
   optionsSuccessStatus: 200
 };
 
