@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors =    require('cors')
 const mongoURI=require('./db/connection');
@@ -7,7 +8,7 @@ const namaztimeRouter = require('./routers/namaztime_r')
 const timeupdateRouter = require('./routers/updatenamaz_r')
 const quoteRoutes = require('./routers/quotes_r')
 const updatequoteRoutes = require('./routers/updatequote_r')
-require('dotenv').config();
+const authRoutes = require('./routers/signup_r');
 const app = express();
 const PORT = 8000;
 
@@ -32,6 +33,7 @@ app.use('/api',namaztimeRouter)
 app.use('/api',timeupdateRouter)
 app.use('/api', quoteRoutes);
 app.use('/api', updatequoteRoutes);
+app.use('/api', authRoutes);
 
 // Start the server
 app.listen(PORT, () => {
